@@ -123,7 +123,6 @@ function limpaTela() {
     divPalavra.innerHTML = "";
     divLetraErrada.innerHTML = "";
     divTeclado.innerHTML = "";
-
 }
 
 function comecaJogo() {
@@ -161,10 +160,12 @@ function verificaLetraEAdiciona(tecla) {
     const espacoLetraCerta = document.querySelectorAll(".espaco-letra");
     for (let i = 0; i < palavraAleatoria.length; i++) {
         if (tecla === palavraAleatoria[i]) {
-            acertos++;
-            verificaSeVenceu();
-            espacoLetraCerta[i].innerHTML = tecla;
-            document.getElementById(tecla).style.background = "green";
+            if (document.getElementById(tecla).style.background != "green") {
+                acertos++;
+                verificaSeVenceu();
+                espacoLetraCerta[i].innerHTML = tecla;
+                document.getElementById(tecla).style.background = "green";
+            }
         }
     }
     if (!palavraAleatoria.includes(tecla) && !letrasErradas.includes(tecla)) {
