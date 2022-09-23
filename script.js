@@ -8,7 +8,6 @@ let palavraAleatoria;
 const letrasErradas = [];
 let erros = 0;
 let acertos = 0;
-const teclasDoTeclado = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ç", "Z", "X", "C", "V", "B", "N", "M"];
 const telaInicio = document.querySelector(".inicio");
 const telaJogo = document.querySelector(".jogo");
 const divPalavra = document.querySelector(".caixa-palavra");
@@ -50,8 +49,12 @@ function criaEspacoLetras() {
 }
 
 function criaTeclado() {
-    teclasDoTeclado.forEach(tecla => {
-        divTeclado.innerHTML += `<button class="botoes-teclado" id="${tecla}" onclick="verificaLetraEAdiciona('${tecla}')">${tecla}</button>`
+    const teclasDoTeclado = {"linha-1": ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"], "linha-2": ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ç"], "linha-3": ["Z", "X", "C", "V", "B", "N", "M"]};
+    Object.keys(teclasDoTeclado).forEach((key) => {
+        divTeclado.innerHTML += `<div id="${key}"></div>`;
+        teclasDoTeclado[key].forEach((tecla) => { 
+            document.getElementById(key).innerHTML += `<button id="${tecla}" class="botoes-teclado" onclick="verificaLetraEAdiciona('${tecla}')">${tecla}</button>`;
+        });
     });
 }
 
