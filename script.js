@@ -6,6 +6,7 @@ pincel.strokeStyle = "#55179b";
 const palavras = ["AZUL", "AMARELO", "VERMELHO", "ROXO", "VERDE", "PRETO", "ROSA", "ALURA", "JAVASCRIPT", "HTML", "CSS", 'CEU', 'MAR', 'TERRA', 'AGUA', 'COMPUTADOR', 'CELULAR', 'BORBOLETA', 'GATO', 'CACHORRO', 'COELHO', 'LEAO', 'RAPOSA', 'PROGRAMAÇAO', 'GENSHIN IMPACT', 'TOWER OF FANTASY', 'NIER', 'PUNISHING GRAY RAVEN', 'HONKAI IMPACT', 'NIOH', 'OVERWATCH', 'LEAGUE OF LEGENDS', 'HAIKYUU', 'FAIRY TAIL', 'ONE PIECE', 'DEMON SLAYER', 'PYTHON', 'JAVA', 'REACT', 'HARRY POTTER', 'NARNIA', 'AVATAR', 'SENHOR DOS ANEIS', 'NARUTO', 'LASANHA', 'CHOCOLATE', 'BOLO', 'LARANJA', 'MAÇA', 'BANANA', 'MORANGO', 'MELANCIA', 'GOIABA', 'BOLA', 'LIXA', 'ESMALTE', 'SECADOR', 'MAQUINHA DE LAVAR', 'GELADEIRA', 'CADEIRA', 'MESA', 'SOFA', 'TELEVISAO', 'GUARDA ROUPA', 'PISCINA', 'CHUVA', 'CAVALO', 'ZEBRA', 'GIRAFA', 'CROCODILO', 'TUCANO', 'GUAXINIM', 'GAMBA', 'MACACO', 'FALL GUYS', 'ASSASSINS CREED', 'GOD OF WAR', 'MONSTER HUNTER', 'ZELDA', 'MARIO', 'SONIC', 'BRASIL', 'ITALIA', 'JAPAO', 'FRANÇA', 'ESPANHA', 'CHILE', 'ARGENTINA', 'PERU', 'BOLIVIA', 'MEXICO', 'TAILANDIA', 'AFRICA', 'CANADA', 'EGITO', 'SUIÇA', 'SUECIA', 'PARAGUAI', 'URUGUAI', 'AMERICA', 'EUROPA', 'ASIA', 'OCEANIA', 'LAPIS', 'LAPISEIRA', 'CANETA', 'LIVRO', 'CADERNO', 'AGENDA', 'PROFESSOR', 'MOTORISTA', 'CARTEIRO', 'MOTOBOY', 'ADVOGADO', 'RELOGIO', 'CARTA', 'CARIMBO', 'ORACLE', 'FOGO', 'GELO', 'AR', 'JOIA', 'RUBI', 'DIAMANTE', 'MINECRAFT', 'JADE', 'AMETISTA', 'CARVAO', 'TOCHA', 'COBRE', 'OURO', 'PRATA', 'MINERIO', 'PA', 'PICARETA', 'MACHADO', 'ARMADURA', 'FERRO', 'MADEIRA', 'ARVORE', 'FLOR', 'MARGARIDA', 'MELAO', 'ORQUIDEA', 'PITAYA', 'MAMAO', 'SAMAMBAIA', 'COBRA', 'AMORA', 'ACEROLA', 'FRAMBOESA', 'ARROZ', 'FEIJAO', 'BATATA', 'BROCOLIS', 'AZEITONA', 'PIZZA', 'PASTEL', 'CHURROS', 'ALFACE', 'CENOURA', 'LIMAO', 'MEL', 'ABELHA', 'PEIXE', 'CICLISTA', 'MEDICO'];
 let palavraAleatoria;
 const letrasErradas = [];
+const letrasCertas = [];
 let erros = 0;
 let acertos = 0;
 const telaInicio = document.querySelector(".inicio");
@@ -15,6 +16,8 @@ const divLetraErrada = document.querySelector(".caixa-letra-errada");
 const telaNovaPalavra = document.querySelector(".nova-palavra");
 const inputPalavra = document.querySelector(".palavra-frase");
 const divTeclado = document.querySelector(".teclado");
+const perdeu = document.querySelector(".perdeu");
+const venceu = document.querySelector(".venceu");
 
 function desenhaForca() {
     pincel.beginPath();
@@ -118,11 +121,13 @@ function desenhaBonecoForca() {
 function limpaTela() {
     pincel.clearRect(0, 0, 350, 410);
     letrasErradas.splice(0, letrasErradas.length);
+    letrasCertas.splice(0, letrasCertas.length);
     erros = 0;
     acertos = 0;
     divPalavra.innerHTML = "";
     divLetraErrada.innerHTML = "";
     divTeclado.innerHTML = "";
+    document.querySelector(".paragrafo-fim").innerHTML = "";
 }
 
 function comecaJogo() {
@@ -139,18 +144,15 @@ function verificaSeVenceu() {
     if (palavraAleatoria.includes(" ")) {
         const quantidadeDeEspacos = palavraAleatoria.match(/[\s]/);
         if (acertos === palavraAleatoria.length - quantidadeDeEspacos.length) {
-            const venceu = document.querySelector(".venceu");
             venceu.style.display = "block";
         }
     } else if (acertos === palavraAleatoria.length) {
-        const venceu = document.querySelector(".venceu");
         venceu.style.display = "block";
     }
 }
 
 function verificaSePerdeu() {
     if (erros === 6) {
-        const perdeu = document.querySelector(".perdeu");
         perdeu.style.display = "block";
         document.querySelector(".paragrafo-fim").innerHTML += `<p>A palavra era "${palavraAleatoria.toLowerCase()}"!</p>`;
     }
@@ -158,9 +160,12 @@ function verificaSePerdeu() {
 
 function verificaLetraEAdiciona(tecla) {
     const espacoLetraCerta = document.querySelectorAll(".espaco-letra");
+    if (letrasCertas.includes(tecla))
+        return;
     for (let i = 0; i < palavraAleatoria.length; i++) {
         if (tecla === palavraAleatoria[i]) {
                 acertos++;
+                letrasCertas.push(tecla);
                 verificaSeVenceu();
                 espacoLetraCerta[i].innerHTML = tecla;
                 document.getElementById(tecla).style.background = "green";
@@ -196,20 +201,28 @@ inputPalavra.addEventListener("beforeinput", (evento) => {
 
 function adicionaPalavra() {
     const palavra = inputPalavra.value.toUpperCase();
+    const p = document.createElement("p");
     if (palavras.includes(palavra)) {
-        const p = document.createElement("p");
-        inputPalavra.addAdjacentElement(p);
+        inputPalavra.insertAdjacentElement("afterend", p);
         p.innerHTML = "<strong><em>Esta palavra já foi adicionada!</em></strong>";
+        inputPalavra.value = "";
     } else {
+        p.innerHTML = "";
         console.log(palavra);
         palavras.push(palavra);
+        telaNovaPalavra.style.display = "none";
+        comecaJogo();
     }
-    telaNovaPalavra.style.display = "none";
-    comecaJogo();
 }
 
 function recarregaPagina() {
-    location.reload(true);
+    //não sei como fazer window.location.reload(); manter as alterações nas palavras adicionadas
+    limpaTela();
+    telaJogo.style.display = "none";
+    telaNovaPalavra.style.display = "none";
+    venceu.style.display = "none";
+    perdeu.style.display = "none";
+    telaInicio.style.display = "flex";
 }
 
 document.querySelector(".botao-jogar").onclick = comecaJogo;
