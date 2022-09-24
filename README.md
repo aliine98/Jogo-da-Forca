@@ -17,7 +17,7 @@
   <p>Vitória:</p>
   <img src="https://user-images.githubusercontent.com/90913523/192061469-e9f2c839-71ce-4061-81b9-fb433398b6f9.png" width="800">
   <p>Derrota:</p>
-  <img src="https://user-images.githubusercontent.com/90913523/192061267-d9523d77-c9c0-4ced-b2a0-0f405f9fc95b.png" width="800">
+  <img src="https://user-images.githubusercontent.com/90913523/192075724-4381c613-96bd-4bcf-8e1f-130a1cf6d18a.png" width="800">
   <p>Nova Palavra:</p>
   <img src="https://user-images.githubusercontent.com/90913523/192052645-23026cb8-9c45-4ba9-a691-c9144eb7918d.png" width="800">
 </details>
@@ -30,7 +30,7 @@
   <p>Vitória:</p>
   <img src="https://user-images.githubusercontent.com/90913523/192060643-6230eb0c-0ff3-499b-b0e7-3041ba8bc612.png" width="300">
   <p>Derrota:</p>
-  <img src="https://user-images.githubusercontent.com/90913523/192058534-7c94e294-d060-488e-b551-2b38c391c529.png" width="300">
+  <img src="https://user-images.githubusercontent.com/90913523/192075761-7f71c684-dd26-421c-a892-84e923ebdd22.png" width="300">
   <p>Nova Palavra:</p>
   <img src="https://user-images.githubusercontent.com/90913523/192060793-a7c5043b-64be-4db7-a85c-b501c0d5b504.png" width="300">
 </details>
