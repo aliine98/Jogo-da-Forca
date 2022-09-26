@@ -208,7 +208,7 @@ function adicionaPalavra() {
     if (palavras.includes(palavra)) {
         pPalavraJaAdicionada.innerHTML = "<strong><em>Esta palavra já foi adicionada!</em></strong>";
         inputPalavra.value = "";
-    } else {
+    } else if (inputPalavra.value != "") {
         pPalavraJaAdicionada.innerHTML = "";
         inputPalavra.value = ""
         console.log(palavra);
