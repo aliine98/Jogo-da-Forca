@@ -204,8 +204,8 @@ inputPalavra.addEventListener("beforeinput", (evento) => {
 });
 
 function adicionaPalavra() {
+    const palavra = inputPalavra.value.toUpperCase();
     if (palavras.includes(palavra)) {
-        inputPalavra.insertAdjacentElement("afterend", p);
         pPalavraJaAdicionada.innerHTML = "<strong><em>Esta palavra já foi adicionada!</em></strong>";
         inputPalavra.value = "";
     } else {
