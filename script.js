@@ -128,6 +128,8 @@ function limpaTela() {
     divLetraErrada.innerHTML = "";
     divTeclado.innerHTML = "";
     document.querySelector(".paragrafo-fim").innerHTML = "";
+    venceu.style.display = "none";
+    perdeu.style.display = "none";
 }
 
 function comecaJogo() {
@@ -220,8 +222,6 @@ function recarregaPagina() {
     limpaTela();
     telaJogo.style.display = "none";
     telaNovaPalavra.style.display = "none";
-    venceu.style.display = "none";
-    perdeu.style.display = "none";
     telaInicio.style.display = "flex";
 }
 
