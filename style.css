@@ -105,7 +105,7 @@ main {
 .espaco-letra {
     font-size: 30px;
     font-weight: 600;
-    margin: 1rem;
+    margin: 0.5rem;
     padding: 0.5rem 1rem;
     border-bottom: 4px solid #55179b;
 }
