@@ -18,6 +18,8 @@ const inputPalavra = document.querySelector(".palavra-frase");
 const divTeclado = document.querySelector(".teclado");
 const perdeu = document.querySelector(".perdeu");
 const venceu = document.querySelector(".venceu");
+const pPalavraJaAdicionada = document.createElement("p");
+inputPalavra.insertAdjacentElement("afterend", pPalavraJaAdicionada);
 
 function desenhaForca() {
     pincel.beginPath();
@@ -202,14 +204,13 @@ inputPalavra.addEventListener("beforeinput", (evento) => {
 });
 
 function adicionaPalavra() {
-    const palavra = inputPalavra.value.toUpperCase();
-    const p = document.createElement("p");
     if (palavras.includes(palavra)) {
         inputPalavra.insertAdjacentElement("afterend", p);
-        p.innerHTML = "<strong><em>Esta palavra já foi adicionada!</em></strong>";
+        pPalavraJaAdicionada.innerHTML = "<strong><em>Esta palavra já foi adicionada!</em></strong>";
         inputPalavra.value = "";
     } else {
-        p.innerHTML = "";
+        pPalavraJaAdicionada.innerHTML = "";
+        inputPalavra.value = ""
         console.log(palavra);
         palavras.push(palavra);
         telaNovaPalavra.style.display = "none";
