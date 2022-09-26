@@ -194,6 +194,7 @@ document.addEventListener("keyup", (evento) => {
 function mostraTelaAdicionarPalavra() {
     telaInicio.style.display = "none";
     telaNovaPalavra.style.display = "flex";
+    pPalavraJaAdicionada.innerHTML = "";
 }
 
 // função para impedir letras acentuadas e caracteres especiais de serem digitadas no textarea
@@ -209,7 +210,6 @@ function adicionaPalavra() {
         pPalavraJaAdicionada.innerHTML = "<strong><em>Esta palavra já foi adicionada!</em></strong>";
         inputPalavra.value = "";
     } else if (inputPalavra.value != "") {
-        pPalavraJaAdicionada.innerHTML = "";
         inputPalavra.value = ""
         console.log(palavra);
         palavras.push(palavra);
@@ -219,7 +219,6 @@ function adicionaPalavra() {
 }
 
 function recarregaPagina() {
-    //não sei como fazer window.location.reload(); manter as alterações nas palavras adicionadas
     limpaTela();
     telaJogo.style.display = "none";
     telaNovaPalavra.style.display = "none";
