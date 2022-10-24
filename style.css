@@ -20,9 +20,10 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    margin: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
 }
 
 .caixa-titulo {
@@ -100,13 +101,15 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 2rem;
 }
 
 .espaco-letra {
     font-size: 30px;
     font-weight: 600;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    margin: .5rem;
+    width: 45px;
+    text-align: center;
     border-bottom: 4px solid #55179b;
 }
 
@@ -253,7 +256,7 @@ footer p {
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 450px){
+@media screen and (min-width: 450px) {
     .botoes-teclado {
         width: 40px;
         margin: 0 5px;
@@ -274,7 +277,7 @@ footer p {
     }
 }
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 900px) {
     .botoes-teclado {
         width: 80px;
         margin: 0 10px;
