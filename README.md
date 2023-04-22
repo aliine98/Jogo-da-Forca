@@ -1,9 +1,10 @@
 # ![Banner](https://user-images.githubusercontent.com/90913523/228410057-ed0e6a62-9049-40fb-8a5d-668c903685bb.png)
 
 <p align="center">
+  <a href="https://www.codefactor.io/repository/github/aliine98/jogo-da-forca"><img src="https://www.codefactor.io/repository/github/aliine98/jogo-da-forca/badge" alt="CodeFactor" /></a>
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Aliine98/Jogo-da-Forca?style=flat">
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Aliine98/Jogo-da-Forca?color=magenta&style=flat">
-  <a href="https://www.linkedin.com/in/aline-bevilacqua/"><img alt="Linkedin URL" src="https://img.shields.io/twitter/url?label=Conecte-se&logo=linkedin&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Faline-bevilacqua%2F"></a>
+  <a href="https://www.linkedin.com/in/aline-bevilacqua/"><img alt="Linkedin URL" src="https://img.shields.io/twitter/url?label=Conecte-se comigo&logo=linkedin&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Faline-bevilacqua%2F"></a>
 </p>
 
 ## 💻 Sobre o projeto
@@ -56,8 +57,6 @@
 
 ## 🚀 Rodando localmente
 
-Caso queira fazer modificações no site, siga estes passos:
-
 Clone o projeto
 
 ```bash
@@ -70,18 +69,24 @@ Entre no diretório do projeto
   cd Jogo-da-Forca
 ```
 
-E abra o <code>index.html</code> no navegador, ou se quiser pode instalar o http-server para que suas modificações sejam carregadas automaticamente
+E abra o <code>index.html</code> no navegador ou, caso use o VScode, instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) e clique no botão <ins><strong>Go Live</strong></ins>, se não pode instalar o http-server para que suas modificações sejam recarregadas automaticamente em seu navegador
+
 ```bash
   npm install http-server
 ```
+
 Abra o servidor
+
 ```bash
   http-server ./
 ```
+
 Será mostrado os links do servidor, clique ou copie e abra no navegador.
-<p>Após a instalação do http-server também adicione um <code>.gitignore</code> com a pasta node_modules.</p>
+
+Após a instalação do http-server também adicione um <code>.gitignore</code> com a pasta node_modules.
 
 Utilize o comando abaixo para saber mais sobre o http-server:
+
 ```bash
   npm docs http-server
 ```
