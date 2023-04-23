@@ -7,6 +7,18 @@
   <a href="https://www.linkedin.com/in/aline-bevilacqua/"><img alt="Linkedin URL" src="https://img.shields.io/twitter/url?label=Conecte-se comigo&logo=linkedin&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Faline-bevilacqua%2F"></a>
 </p>
 
+
+> Table of Contents
+> <ul>
+>   <li><a href="#-sobre-o-projeto">Sobre</a></li>
+>   <li><a href="#-funcionalidades">Funcionalidades</a></li>
+>   <li><a href="#-screenshots">Screenshots</a></li>
+>   <li><a href="#-tecnologias">Tecnologias</a></li>
+>   <li><a href="#-rodando-localmente">Rodando localmente</a></li>
+>   <li><a href="#-como-contribuir-para-o-projeto">Como contribuir para o projeto</a></li>
+>   <li><a href="#-licença">Licença</a>
+> </ul>
+
 ## 💻 Sobre o projeto
 
 <p>Um jogo da forca feito com javascript! Pode ser jogado em pc e mobile, digitando com o próprio teclado ou com os botões na tela.</p>
@@ -98,6 +110,7 @@ Utilize o comando abaixo para saber mais sobre o http-server:
 3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
 4. Envie as suas alterações: `git push origin my-feature`
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
+
 ## 📝 Licença
 
 ![License](https://img.shields.io/github/license/Aliine98/Jogo-da-Forca?logo=m&style=for-the-badge)
