@@ -62,9 +62,9 @@
 
 ## 🛠 Tecnologias
 
-- Javascript
-- CSS
-- HTML
+- ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+- ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
 
 ## 🚀 Rodando localmente
@@ -109,6 +109,7 @@ Utilize o comando abaixo para saber mais sobre o http-server:
 2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
 3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
 4. Envie as suas alterações: `git push origin my-feature`
+5. No seu repositório clique num botão chamado _**Compare & Pull Request**_ e crie o seu PR.
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](https://github.com/firstcontributions/first-contributions)
 
 ## 📝 Licença
