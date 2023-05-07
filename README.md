@@ -9,7 +9,7 @@
 
 
 > Table of Contents
-> <ul>
+> <ol>
 >   <li><a href="#-sobre-o-projeto">Sobre</a></li>
 >   <li><a href="#-funcionalidades">Funcionalidades</a></li>
 >   <li><a href="#-screenshots">Screenshots</a></li>
@@ -17,7 +17,7 @@
 >   <li><a href="#-rodando-localmente">Rodando localmente</a></li>
 >   <li><a href="#-como-contribuir-para-o-projeto">Como contribuir para o projeto</a></li>
 >   <li><a href="#-licença">Licença</a>
-> </ul>
+> </ol>
 
 ## 💻 Sobre o projeto
 
